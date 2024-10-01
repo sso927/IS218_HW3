@@ -8,7 +8,7 @@ def test_operation_add():
     assert calculation.perform() == Decimal('15'), "Add operation failed"
 
 
-def test_oepration_subtract():
+def test_operation_subtract():
     calculation = Calculation(Decimal('10'), Decimal('5'), subtract)
     assert calculation.perform() == Decimal('5'), "Subtract operation failed"
 
