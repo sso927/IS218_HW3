@@ -1,4 +1,4 @@
-from decimal import Decimal 
+from decimal import Decimal, InvalidOperation
 from app.commands import Command
 from calculator.operations import multiply
 
@@ -10,8 +10,8 @@ class MultiplyCommand(Command):
         try:
             num1 = Decimal(user_input[0])
             num2 = Decimal(user_input[1])
-        except ValueError:
-            print("Please enter valid numbers.")
+        except (ValueError, InvalidOperation):
+            print("Please enter valid numbers. Enter in the format <number1> <number2> <arithmetic operation>")
             return False
         
         result = multiply(num1, num2)

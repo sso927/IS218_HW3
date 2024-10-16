@@ -16,10 +16,8 @@ class CommandHandler:
         try:
             if command_name in self.commands:
                 if len(args) == 0:
-                    # Call the execute method with no arguments for commands like "menu"
                     self.commands[command_name].execute()
                 else:
-                    # Call the execute method with the provided arguments
                     self.commands[command_name].execute(args)
         except KeyError:
             print(f"No such command: {command_name}")

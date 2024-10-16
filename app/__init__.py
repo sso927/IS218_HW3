@@ -25,7 +25,8 @@ class App:
         while True:  
             command_input = input(">>> ").strip()
             if command_input.lower() == 'exit':
-                break
+                raise SystemExit('Exiting...')
+            
             user_input = command_input.split()
 
             if len(user_input) == 3: 
@@ -36,6 +37,3 @@ class App:
 
             userCommand = user_input[0]
             self.command_handler.execute_command(userCommand)
-            
-
-            

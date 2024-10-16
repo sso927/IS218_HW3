@@ -1,4 +1,4 @@
-from decimal import Decimal 
+from decimal import Decimal, InvalidOperation
 from app.commands import Command
 from calculator.operations import add
 
@@ -10,10 +10,9 @@ class AddCommand(Command):
         try:
             num1 = Decimal(user_input[0])
             num2 = Decimal(user_input[1])
-        except ValueError:
-            print("Please enter valid numbers.")
+        except (ValueError, InvalidOperation):
+            print("Please enter valid numbers. Enter in the format <number1> <number2> <arithmetic operation>")
             return False
         
         result = add(num1, num2)
         print(f"The result of {num1} add {num2} is {result}.")
-
