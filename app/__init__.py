@@ -21,7 +21,7 @@ class App:
                         continue   
     def start(self):
         self.load_plugins()
-        print("Type 'exit' to exit.")
+        print("Type 'exit' to exit. Format math commands as: <number1> <number2> <add>/<subtract>/<multiply>/<divide>.")
         while True:  
             command_input = input(">>> ").strip()
             if command_input.lower() == 'exit':
@@ -34,6 +34,8 @@ class App:
                 numbers = user_input[:2]
                 self.command_handler.execute_command(userCommand, *numbers)
                 continue
+            else:
+                print(f"No such command: {command_input}.")
 
             userCommand = user_input[0]
             self.command_handler.execute_command(userCommand)

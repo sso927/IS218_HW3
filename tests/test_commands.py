@@ -10,8 +10,8 @@ def test_app_greet_command(capfd, monkeypatch):
 
     app = App()
     with pytest.raises(SystemExit) as e:
-        app.start()  
-    
+        app.start()
+
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
 def test_app_menu_command(capfd, monkeypatch):
@@ -20,8 +20,8 @@ def test_app_menu_command(capfd, monkeypatch):
 
     app = App()
     with pytest.raises(SystemExit) as e:
-        app.start()  
-    
+        app.start()
+
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
 def test_app_add_command(capfd, monkeypatch):
@@ -30,8 +30,8 @@ def test_app_add_command(capfd, monkeypatch):
 
     app = App()
     with pytest.raises(SystemExit) as e:
-        app.start()  
-    
+        app.start()
+
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
 
@@ -41,8 +41,8 @@ def test_app_subtract_command(capfd, monkeypatch):
 
     app = App()
     with pytest.raises(SystemExit) as e:
-        app.start()  
-    
+        app.start()
+
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
 
@@ -52,7 +52,7 @@ def test_app_multiply_command(capfd, monkeypatch):
 
     app = App()
     with pytest.raises(SystemExit) as e:
-        app.start()  
+        app.start()
     
     assert str(e.value) == "Exiting...", "The app did not exit as expected"
 
