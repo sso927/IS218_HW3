@@ -1,6 +1,7 @@
 from decimal import Decimal, InvalidOperation
 from app.commands import Command
 from calculator.operations import multiply
+import logging
 
 class MultiplyCommand(Command):
     def __init__(self):
@@ -12,8 +13,11 @@ class MultiplyCommand(Command):
             num2 = Decimal(user_input[1])
         except (ValueError, InvalidOperation):
             print("Please enter valid numbers. Enter in the format <number1> <number2> <arithmetic operation>")
+            logging.error('User input failed. Value error or Invalid operation.')
+
             return False
         
         result = multiply(num1, num2)
         print(f"The result of {num1} multiply {num2} is {result}.")
+        logging.info('Multiplication function performed successfully. Good job!')
 
