@@ -12,8 +12,8 @@ class App: #all of the environment variable things
     def __init__(self): 
         self.command_handler = CommandHandler()
         os.makedirs('logs', exist_ok = True)
-        load_dotenv()
         self.configure_logging()
+        load_dotenv()
         self.settings = self.load_environment_variables()
         self.settings.setdefault('SECRET_KEY', 'DATABASE_USERNAME')
 
@@ -85,7 +85,7 @@ class App: #all of the environment variable things
 
                 self.command_handler.execute_command(userCommand, *numbers)
                 continue
-            
+
             else:
                 userCommand = user_input[0]
 
